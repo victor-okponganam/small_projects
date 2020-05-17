@@ -3,7 +3,10 @@ const app = express()
 const bcrpyt = require('bcrypt')
 const passport =require('passport')
 const initializePassport = require('./passport-config')
-initializePassport(passport)
+initializePassport(
+    passport, 
+    email => users.find(user => user.email === email)
+)
 
 const users = []
 
